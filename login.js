@@ -24,17 +24,33 @@ const btnSpinner    = document.getElementById("btnSpinner");
 const eyeIcon       = document.getElementById("eyeIcon");
 
 // ── Check existing session on load ───────────────────────────
-const { data: { session } } = await supabase.auth.getSession();
 
-if (session && window.location.pathname === "/login.html") {
-  redirectToDashboard();
+const { data: { session }, error } = await supabase.auth.getSession();
+
+if (error) {
+  console.log("Auth error:", error);
+}
+
+if (!session) {
+  setTimeout(() => {
+    supabase.auth.getSession().then(({ data }) => {
+      if (!data.session) {
+        window.location.href = "login.html";
+      }
+    });
+  }, 300);
 }
 
 // Fires when Google redirects back to your site after login
-supabase.auth.onAuthStateChange((_event, session) => {
-  if (session) redirectToDashboard();
-});
+supabase.auth.onAuthStateChange((event, session) => {
+  if (event === "SIGNED_IN") {
+    window.location.href = "dashboard.html";
+  }
 
+  if (event === "SIGNED_OUT") {
+    window.location.href = "login.html";
+  }
+});
 // ── Google Sign-In ───────────────────────────────────────────
 googleBtn.addEventListener("click", async () => {
   clearError();
