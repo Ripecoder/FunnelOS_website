@@ -25,7 +25,10 @@ const eyeIcon       = document.getElementById("eyeIcon");
 
 // ── Check existing session on load ───────────────────────────
 const { data: { session } } = await supabase.auth.getSession();
-if (session) redirectToDashboard();
+
+if (session && window.location.pathname === "/login.html") {
+  redirectToDashboard();
+}
 
 // Fires when Google redirects back to your site after login
 supabase.auth.onAuthStateChange((_event, session) => {
