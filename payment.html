@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Choose Plan — Verbe</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="payment.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="header">
+      <a href="dashboard.html" class="logo">
+        verbe<span class="logo-dot">.</span>
+      </a>
+    </header>
+
+    <!-- PRICING GRID -->
+    <div class="pricing-grid">
+
+      <!-- FREE TRIAL CARD -->
+      <div class="payment-card">
+
+        <div class="badge">Recommended</div>
+
+        <h1 class="title">14 Day Trial</h1>
+
+        <p class="sub">
+          Test the full chatbot system on your website before paying.
+        </p>
+
+        <div class="price-box">
+          <div class="price">₹0</div>
+          <div class="price-sub">free for 14 days</div>
+        </div>
+
+        <ul class="features">
+          <li>✔ Full chatbot deployment</li>
+          <li>✔ Lead dashboard access</li>
+          <li>✔ Real-time lead capture</li>
+          <li>✔ WhatsApp + Email notifications</li>
+          <li>✔ No payment upfront</li>
+        </ul>
+
+        <button id="trialBtn" class="btn-secondary">
+          Start Free Trial
+        </button>
+
+        <div class="note">
+          Trial automatically expires after 14 days.
+        </div>
+
+      </div>
+
+      <!-- PAID PLAN -->
+      <div class="payment-card featured">
+
+        <h1 class="title">Pro Plan</h1>
+
+        <p class="sub">
+          Activate the full production version with continuous lead handling.
+        </p>
+
+        <div class="price-box">
+          <div class="price">₹4,999</div>
+          <div class="price-sub">per month</div>
+        </div>
+
+        <ul class="features">
+          <li>✔ Unlimited chatbot usage</li>
+          <li>✔ Unlimited lead collection</li>
+          <li>✔ Dashboard + analytics</li>
+          <li>✔ WhatsApp integration</li>
+          <li>✔ Priority support</li>
+        </ul>
+
+        <button id="payBtn" class="btn-primary">
+          Upgrade Now
+        </button>
+
+        <div class="note">
+          Secure Razorpay checkout.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="payment.js"></script>
+
+</body>
+
+</html>

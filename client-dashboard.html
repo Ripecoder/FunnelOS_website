@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Client Dashboard — Verbe</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="client-dashboard.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <div class="header-left">
+      <div class="logo">
+        FunnelOS<span class="logo-dot">.</span>
+      </div>
+
+      <div class="trial-badge" id="trialBadge">
+        14 Day Free Trial
+      </div>
+    </div>
+
+    <div class="header-right">
+
+      <div class="live-status">
+        <span class="live-dot"></span>
+        Live
+      </div>
+
+      <button class="upgrade-btn" id="upgradeBtn">
+        Upgrade Plan
+      </button>
+
+    </div>
+
+  </header>
+
+  <!-- MAIN -->
+  <main class="main-container">
+
+    <!-- TOP STATS -->
+    <section class="stats-grid">
+
+      <div class="stat-card">
+        <div class="stat-label">Leads Today</div>
+        <div class="stat-value" id="leadsToday">
+          0
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Total Leads</div>
+        <div class="stat-value" id="totalLeads">
+          0
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Attended</div>
+        <div class="stat-value" id="attendedLeads">
+          0
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Conversion Rate</div>
+        <div class="stat-value">
+          --
+        </div>
+      </div>
+
+    </section>
+
+    <!-- MAIN GRID -->
+    <section class="dashboard-grid">
+
+      <!-- LEFT -->
+      <div class="left-panel">
+
+        <!-- LIVE LEADS -->
+        <div class="panel-card">
+
+          <div class="panel-header">
+
+            <div>
+              <h2>Incoming Leads</h2>
+              <p>Real-time chatbot captures</p>
+            </div>
+
+            <div class="pulse-live">
+              ● LIVE
+            </div>
+
+          </div>
+
+          <div class="leads-container" id="leadsContainer">
+
+            <!-- LEAD CARD TEMPLATE -->
+            <!-- JS will spawn these dynamically -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="right-panel">
+
+        <!-- CHATBOT STATUS -->
+        <div class="panel-card">
+
+          <h3>Deployment Status</h3>
+
+          <div class="deploy-status success">
+            ✅ Chatbot Connected
+          </div>
+
+          <div class="deploy-item">
+            <span>Website</span>
+            <span id="websiteName">
+              Connected
+            </span>
+          </div>
+
+          <div class="deploy-item">
+            <span>API Key</span>
+            <span>
+              Active
+            </span>
+          </div>
+
+          <div class="deploy-item">
+            <span>Lead Tracking</span>
+            <span>
+              Enabled
+            </span>
+          </div>
+
+        </div>
+
+        <!-- QUICK ACTIONS -->
+        <div class="panel-card">
+
+          <h3>Quick Actions</h3>
+
+          <button class="action-btn" id="viewSciprtBtn">
+            View Script
+          </button>
+
+          <button class="action-btn" id="copyApiKKeyBtn">
+            Copy API Key
+          </button>
+
+          <button class="action-btn" id="whatsappSetupBtn">
+            WhatsApp Setup (Coming Soon)
+          </button>
+
+        </div>
+
+        <!-- TRIAL STATUS -->
+        <div class="panel-card">
+
+          <h3>Trial Status</h3>
+
+          <div class="trial-days" id="trialDays">
+            14 days remaining
+          </div>
+
+          <div class="trial-bar">
+            <div class="trial-fill" id="trialFill"></div>
+          </div>
+
+          <p class="trial-text">
+            Upgrade before trial ends to keep your chatbot active.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="client-dashboard.js"></script>
+
+</body>
+</html>
