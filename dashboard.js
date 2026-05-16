@@ -16,7 +16,15 @@ const { data: { session } } = await supabase.getSession();
 if (!session) {
   window.location.href = "login.html";
 }
+supabase.auth.onAuthStateChange((event, session) => {
+  if (event === "SIGNED_IN") {
+    window.location.href = "dashboard.html";
+  }
 
+  if (event === "SIGNED_OUT") {
+    window.location.href = "login.html";
+  }
+});
 const user = session.user;
 
 // ── UI elements ──────────────────────────
